@@ -12,7 +12,7 @@
           <li><a href="#">Woman</a></li>
         <li><a class="logo" href="#"><img src="../assets/img/puma-logo.svg" alt="puma logo"></a></li>
         <li><a href="#">SEARCH</a></li>
-        <li><a class="bag" href="#">BAG: 3</a></li>
+        <li><a class="bag" href="#"><i class="fas fa-shopping-cart"></i> {{currentValue || 0}}  </a></li>
         <li class="userIcon"><img src="../assets/img/user.png" alt="user-icon">
         <i class="fas fa-sort-down"></i></li>
       </ul>
@@ -23,7 +23,12 @@
 
 <script>
 export default {
-  name: 'Nav'
+  name: 'Nav',
+  computed: {
+    currentValue () {
+      return this.$store.state.currentValue
+    }
+  }
 }
 </script>
 
@@ -107,6 +112,10 @@ export default {
   .bag:hover {
     background-color: #525257;
     color: #7389E1 !important; // find the why i need !important
+  }
+  .bag i{
+    margin: 0 3px;
+    font-size: 18px;
   }
   #nav .menu-btn i{
     color: #333;

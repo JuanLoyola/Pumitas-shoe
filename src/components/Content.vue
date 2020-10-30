@@ -18,6 +18,7 @@
         <main>
           <h1>{{model}}</h1>
           <h1 class="important">{{price}}</h1>
+          <h3> {{currentValue || 0}}</h3>
 
           <div>
             <div class="table">
@@ -27,7 +28,7 @@
               <p class="active">US10</p>
               <p class="stock">US11</p>
               <p class="stockOff">US12</p>
-              <p class="table-add">
+              <p class="table-add" @click="increaseValue(currentValue++)">
               ADD <i class="fas fa-plus"/>
             </p>
             </div>
@@ -40,12 +41,18 @@
 </template>
 
 <script>
+
 export default {
   name: 'Content',
   data () {
     return {
       model: 'Puma Rs-x Toys - Woman Shoes',
       price: '$169.00'
+    }
+  },
+  computed: {
+    increaseValue () {
+      return this.$store.mutations.increaseValue
     }
   }
 }
@@ -150,6 +157,9 @@ export default {
   }
   .stockOff{
     color: #B7ABAA;
+  }
+  .stockOff:hover{
+    cursor:not-allowed;
   }
   .active, .stock:hover{
     color: #da5037;
