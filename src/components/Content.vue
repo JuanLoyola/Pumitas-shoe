@@ -17,7 +17,7 @@
       <aside>
         <main>
           <h1>{{model}}</h1>
-          <h1>{{price}}</h1>
+          <h1 class="important">{{price}}</h1>
 
           <div>
             <div class="table">
@@ -154,6 +154,9 @@ export default {
   .active, .stock:hover{
     color: #da5037;
   }
+  .important{
+    color: #CA2728;
+  }
 }
 @media (max-width: 767px) {
   .container{
@@ -194,74 +197,52 @@ export default {
   section > aside > footer{
     flex-direction: row;
     display:flex;
-  }
-
-  section > aside > footer img{
-    width: 50px;
-    margin: 5px 6px;
-  }
-  section > aside > div img:hover{
-    transform: rotateZ(27deg)  translate(-120px,-70px);
+    justify-content: center;
+    align-items: center;
   }
 
   section > aside > main > h1{
     font-size: 1rem;
     text-align: start;
+    display:flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-flow: nowrap column;
     letter-spacing: 2px;
+    background: salmon;
   }
-
+  section > aside > main{
+    width: 100%;       // seguir aca mañana
+  }
   section > aside > main > div{
-    width: 50%;
-    margin: 30px 0;
+    width: 70%;
+    margin: 0px 0;
+    display:flex;
+    justify-content: flex-end;
   }
 
+  main > div {
+    display:flex;
+    background: cyan;
+  }
   .table{
     display:flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: flex-end;
     align-items: center;
-    font-size: 1.3rem;
-    font-weight: bold;
+    font-size: 0.6rem;
 
     &-add{
-      background-color:#CA2728;
-      border-radius: 9px;
-      color: #fff;
-      display:flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: normal;
-      margin: 0 20px;
-      height: 120px;
-      width: 90px;
-    }
-    .table i{
-      color:#FCF6F3;
-      margin: 0 10px;
-    }
-    i{
-      margin: 0 5px;
-    }
-    &-add:hover{
-      background-color:hsl(360, 68%, 57%);
-      cursor: pointer;
+      height: 60px;
+      width: 60px;
     }
   }
   .table p {
-    margin: 0 10px;
+    margin: 0 12px;
     cursor: pointer;
   }
-  .active{
-    color: #DB644F;
-  }
-  .stock{
-    color: #636261;
-  }
-  .stockOff{
-    color: #B7ABAA;
-  }
-  .active, .stock:hover{
-    color: #da5037;
+  .important{
+    color:#CA2728;
   }
 }
 }
