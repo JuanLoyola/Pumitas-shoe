@@ -22,8 +22,8 @@
             </a>
           </li>
           <li class="userIcon">
-            <img src="../assets/img/user.png" alt="user-icon">
-            <i class="fas fa-sort-down"></i>
+            <DropdownUser title='a' :items="services">
+            </DropdownUser>
           </li>
         </ul>
       </div>
@@ -33,9 +33,39 @@
 
 <script>
 import { mapState } from 'vuex'
+import DropdownUser from '@/components/DropdownUser.vue'
 
 export default {
   name: 'Nav',
+  components: {
+    DropdownUser
+  },
+  data () {
+    return {
+      services: [
+        {
+          title: 'Settings',
+          link: '#',
+          icon: 'fas fa-cogs'
+        },
+        {
+          title: 'Feedback',
+          link: '#',
+          icon: 'fas fa-comment-dots'
+        },
+        {
+          title: 'Help',
+          link: '#',
+          icon: 'fas fa-exclamation-triangle'
+        },
+        {
+          title: 'Logout',
+          link: '#',
+          icon: 'fas fa-sign-out-alt'
+        }
+      ]
+    }
+  },
   computed: {
     ...mapState('cart', ['currentValue'])
   }
