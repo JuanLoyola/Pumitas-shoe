@@ -18,7 +18,6 @@
         <main>
           <h1>{{model}}</h1>
           <h1 class="important">{{price}}</h1>
-          <h3> {{currentValue || 0}}</h3>
 
           <div>
             <div class="table">
@@ -28,7 +27,7 @@
               <p class="active">US10</p>
               <p class="stock">US11</p>
               <p class="stockOff">US12</p>
-              <p class="table-add" @click="increaseValue(currentValue++)">
+              <p class="table-add" @click="increaseValue()">
               ADD <i class="fas fa-plus"/>
             </p>
             </div>
@@ -41,7 +40,7 @@
 </template>
 
 <script>
-
+import { mapMutations } from 'vuex'
 export default {
   name: 'Content',
   data () {
@@ -51,9 +50,7 @@ export default {
     }
   },
   computed: {
-    increaseValue () {
-      return this.$store.mutations.increaseValue
-    }
+    ...mapMutations('cart', ['increaseValue'])
   }
 }
 </script>

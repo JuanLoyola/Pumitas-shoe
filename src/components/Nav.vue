@@ -3,31 +3,41 @@
     <div id="nav">
       <div>
         <input type="checkbox" id="click">
-      <label for="click" class="menu-btn">
-        <i class="fas fa-bars"></i>
-      </label>
-      <ul>
+        <label for="click" class="menu-btn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <ul>
           <li><a href="#">New</a></li>
           <li><a href="#">Man</a></li>
           <li><a href="#">Woman</a></li>
-        <li><a class="logo" href="#"><img src="../assets/img/puma-logo.svg" alt="puma logo"></a></li>
-        <li><a href="#">SEARCH</a></li>
-        <li><a class="bag" href="#"><i class="fas fa-shopping-cart"></i> {{currentValue || 0}}  </a></li>
-        <li class="userIcon"><img src="../assets/img/user.png" alt="user-icon">
-        <i class="fas fa-sort-down"></i></li>
-      </ul>
+          <li>
+            <a class="logo" href="#">
+              <img src="../assets/img/puma-logo.svg" alt="puma logo">
+            </a>
+          </li>
+          <li><a href="#">SEARCH</a></li>
+          <li>
+            <a class="bag" href="#">
+              <i class="fas fa-shopping-cart"></i> {{currentValue || 0}}
+            </a>
+          </li>
+          <li class="userIcon">
+            <img src="../assets/img/user.png" alt="user-icon">
+            <i class="fas fa-sort-down"></i>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'Nav',
   computed: {
-    currentValue () {
-      return this.$store.state.currentValue
-    }
+    ...mapState('cart', ['currentValue'])
   }
 }
 </script>
