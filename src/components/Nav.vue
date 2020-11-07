@@ -17,12 +17,11 @@
           </li>
           <li><a href="#">SEARCH</a></li>
           <li>
-            <a class="bag" href="#">
-              <i class="fas fa-shopping-cart"></i> {{currentValue || 0}}
-            </a>
+            <DropdownCart :items="cart">
+            </DropdownCart>
           </li>
-          <li class="userIcon">
-            <DropdownUser title='a' :items="services">
+          <li>
+            <DropdownUser :items="services">
             </DropdownUser>
           </li>
         </ul>
@@ -32,13 +31,14 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
 import DropdownUser from '@/components/DropdownUser.vue'
+import DropdownCart from '@/components/DropdownCart.vue'
 
 export default {
   name: 'Nav',
   components: {
-    DropdownUser
+    DropdownUser,
+    DropdownCart
   },
   data () {
     return {
@@ -63,11 +63,17 @@ export default {
           link: '#',
           icon: 'fas fa-sign-out-alt'
         }
+      ],
+      cart: [
+        {
+          name: 'Rs-x Toys',
+          size: 'US10',
+          quantity: '',
+          trash: 'fas fa-trash-alt',
+          price: '$ 169.00'
+        }
       ]
     }
-  },
-  computed: {
-    ...mapState('cart', ['currentValue'])
   }
 }
 </script>
@@ -110,23 +116,6 @@ export default {
   }
 
 }
-  .userIcon i{
-    color: black;
-    visibility: visible;
-    display:flex;
-    align-items: center;
-    cursor: pointer;
-  }
-  .userIcon{
-    width: 2px;
-    display:flex;
-    flex-direction: row;
-  }
-  .userIcon img{
-    width: 50px;
-    border-radius: 50%;
-    margin: 0 20px;
-  }
   #nav ul li a{
     color: #000;
     text-decoration: none;
@@ -140,23 +129,7 @@ export default {
   #nav ul li a:hover{
     color:#7389E1;
   }
-  .bag {
-    background:#35353C;
-    color: #fff !important; // find the why i need !important
-    height: 70px;
-    width:80px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .bag:hover {
-    background-color: #525257;
-    color: #7389E1 !important; // find the why i need !important
-  }
-  .bag i{
-    margin: 0 3px;
-    font-size: 18px;
-  }
+
   #nav .menu-btn i{
     color: #333;
     font-size: 22px;
@@ -213,11 +186,6 @@ export default {
     #nav ul li a:hover{
       background: none;
       color: cyan;
-    }
-      .bag {
-      background: none;
-      color: #fff !important;
-      height: 30px;
     }
   }
 }

@@ -1,13 +1,12 @@
 <template>
   <div class="menu-item" @click="isOpen = !isOpen">
-    <div>
-      <img src="../assets/img/user.png" alt="user-icon">
-      <i class="fas fa-sort-down"></i>
+    <div class="cart">
+      <i class="fas fa-shopping-cart"></i> {{currentValue || 0}}
     </div>
     <transition name="fade" appear>
       <div class="sub-menu" v-if="isOpen">
         <div v-for="(item, i) in items" :key="i" class="menu-item">
-          <a :href="item.link"> <span><i :class="item.icon" ></i></span> {{ item.title }}</a>
+          <a :href="item.link"> <span><i :class="item.trash" ></i></span> {{ item.name }}</a>
           <hr>
         </div>
       </div>
@@ -16,13 +15,18 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'DropdownUser',
-  props: ['icon', 'title', 'items'],
+  props: ['name', 'size', 'quantity', 'price', 'trash'],
   data () {
     return {
       isOpen: false
     }
+  },
+  computed: {
+    ...mapState('cart', ['currentValue'])
   }
 }
 </script>
@@ -35,7 +39,8 @@ export default {
   transform: translateX(-0%);
   width: 125px;
   height: 168px;
-  background-color: #525257;
+  background-color: #ffffff;
+  border: 1px solid rgba(51, 51, 51, 0.39);
   padding: 10px 10px;
   display:flex;
   flex-direction: column;
@@ -55,10 +60,23 @@ export default {
   cursor: pointer;
 }
 
-.menu-item img{
-  width: 50px;
-  border-radius: 100%;
-  margin: 0 5px;
+.cart {
+  background:#35353C;
+  border-radius: 3px;
+  color: #fff;
+  height: 90px;
+  width:80px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart:hover {
+  background-color: #525257;
+  color: #98a3d1;
+}
+.cart i{
+  margin: 0 3px;
+  font-size: 18px;
 }
 
 a{
