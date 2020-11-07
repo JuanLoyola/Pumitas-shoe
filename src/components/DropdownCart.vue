@@ -5,7 +5,7 @@
     </div>
     <transition name="fade" appear>
       <div class="sub-menu" v-if="isOpen">
-        <div v-for="(item, i) in items" :key="i" class="menu-item">
+        <div v-for="(item, i) in item" :key="i" class="menu-item">
           <a :href="item.link"> <span><i :class="item.trash" ></i></span> {{ item.name }}</a>
           <hr>
         </div>
@@ -18,7 +18,7 @@
 import { mapState } from 'vuex'
 
 export default {
-  name: 'DropdownUser',
+  name: 'DropdownCart',
   props: ['name', 'size', 'quantity', 'price', 'trash'],
   data () {
     return {

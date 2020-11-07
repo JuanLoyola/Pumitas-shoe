@@ -17,7 +17,7 @@
           </li>
           <li><a href="#">SEARCH</a></li>
           <li>
-            <DropdownCart :items="cart">
+            <DropdownCart :item="cart">
             </DropdownCart>
           </li>
           <li>
@@ -64,7 +64,7 @@ export default {
           icon: 'fas fa-sign-out-alt'
         }
       ],
-      cart: [
+      cart:
         {
           name: 'Rs-x Toys',
           size: 'US10',
@@ -72,7 +72,6 @@ export default {
           trash: 'fas fa-trash-alt',
           price: '$ 169.00'
         }
-      ]
     }
   }
 }
