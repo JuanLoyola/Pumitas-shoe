@@ -87,4 +87,30 @@ a:hover{
 .fade-leave-to {
   opacity: 0;
 }
+
+@media (min-width: 375px) and (max-width: 410px) {
+  #nav .menu-item .sub-menu {
+    top: calc(56%);
+  }
+}
+@media (min-width: 411px) and (max-width: 767px){
+  #nav .menu-item .sub-menu {
+    top: calc(62%);
+  }
+}
+@media (min-width: 320px) and (max-width: 359px){
+  #nav .menu-item .sub-menu {
+    top: calc(80%);
+  }
+}
+@media (min-width: 360px) and (max-width: 374px){
+  #nav .menu-item .sub-menu {
+    top: calc(72%);
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px){
+  #nav .menu-item .sub-menu {
+    top: calc(45%);
+  }
+}
 </style>

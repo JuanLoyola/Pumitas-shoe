@@ -169,60 +169,117 @@ export default {
 }
 @media (max-width: 767px) {
   .container{
-  background-color: #FCF6F3;
-  height: 100%;
-  section{
-    flex-direction: column;
-    padding: 1.5rem 0 0 0rem;
-  }
+    background-color: #FCF6F3;
+    height: 100%;
+    section{
+      flex-direction: column;
+      padding: 1.5rem 0 0 0rem;
+    }
 
-  section > aside > div{
-    height: 250px;
-    width: 250px;
-  }
+    section > aside > div{
+      height: 250px;
+      width: 250px;
+    }
 
-  section > aside > div img{
-    width: 250px;
-    transform: translate(0px,-10px);
-  }
-  section > aside > div img:hover{
-    transform: rotateZ(25deg)  translate(-20px,-20px);
-  }
-  section > aside > footer{
-    flex-direction: row;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-  }
+    section > aside > div img{
+      width: 250px;
+      transform: translate(0px,-10px);
+    }
+    section > aside > div img:hover{
+      transform: rotateZ(25deg)  translate(-20px,-20px);
+    }
+    section > aside > footer{
+      flex-direction: row;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-  section > aside > main > h1{
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-    margin: 20px 0;
-  }
-  section > aside > main > div{
-    width: 100%;
-    display:flex;
-    justify-content: flex-end;
-  }
-  .table{
-    display:flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    font-size: 0.6rem;
+    section > aside > main > h1{
+      font-size: 1rem;
+      letter-spacing: 2px;
+      padding: 5px 35px;
+    }
+    section > aside > main > div{
+      width: 100%;
+      display:flex;
+      justify-content: flex-end;
+    }
+    .table{
+      display:flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.6rem;
 
-    &-add{
-      height: 60px;
-      width: 60px;
+      &-add{
+        height: 90px;
+        width: 60px;
+      }
+    }
+    .table p {
+      margin: 0 10px;
+      cursor: pointer;
     }
   }
-  .table p {
-    margin: 0 12px;
-    cursor: pointer;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container{
+    background-color: #FCF6F3;
+    height: 100%;
+    section{
+      flex-direction: column;
+      padding: 2rem 0 0 0rem;
+    }
+
+    section > aside > div{
+      height: 350px;
+      width: 350px;
+    }
+
+    section > aside > div img{
+      width: 350px;
+      transform: translate(0px,-10px);
+    }
+    section > aside > div img:hover{
+      transform: rotateZ(25deg)  translate(-20px,-20px);
+    }
+    section > aside > footer{
+      flex-direction: row;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    section > aside > main > h1{
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      padding: 5px 35px;
+    }
+    section > aside > main > div{
+      width: 100%;
+      display:flex;
+      justify-content: flex-end;
+    }
+    .table{
+      display:flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+
+      &-add{
+        height: 130px;
+        width: 110px;
+      }
+    }
+    .table p {
+      margin: 0 10px;
+      cursor: pointer;
+    }
   }
 }
-}
+
 @media (min-width: 1920px) {
   .container{
     section{

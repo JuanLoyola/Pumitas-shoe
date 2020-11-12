@@ -132,7 +132,7 @@ export default {
   #nav .menu-btn i{
     color: #333;
     font-size: 22px;
-    padding: 0 30px;
+    padding: 0 20px;
     cursor: pointer;
     display:none;
   }
@@ -154,11 +154,11 @@ export default {
       content: "\f00d";
     }
     #nav ul{
-      position: fixed;
+      position: absolute;
       top: 80px;
       left: -100%;
-      background: rgb(192, 191, 191);
-      height: 117vh;
+      background:#FCF6F3;
+      height: 104vh;
       width: 100%;
       text-align: center;
       display: block;
@@ -169,7 +169,7 @@ export default {
     }
     #nav ul li{
       width: 100%;
-      margin: 40px 0;
+      margin: 10px 0px;
     }
     #nav ul li a{
       width: 100%;
@@ -185,6 +185,11 @@ export default {
     #nav ul li a:hover{
       background: none;
       color: cyan;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1024px){
+    #nav .menu-btn i{
+      padding: 0 0 0 35rem;
     }
   }
 }
