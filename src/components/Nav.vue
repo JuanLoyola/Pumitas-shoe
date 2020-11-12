@@ -154,7 +154,7 @@ export default {
       content: "\f00d";
     }
     #nav ul{
-      position: absolute;
+      position: fixed;
       top: 80px;
       left: -100%;
       background:#FCF6F3;
@@ -190,6 +190,23 @@ export default {
   @media (min-width: 768px) and (max-width: 1024px){
     #nav .menu-btn i{
       padding: 0 0 0 35rem;
+    }
+  }
+  @media (min-width: 320px) and (max-width: 359px){
+    #nav ul{
+      position: absolute;
+      top: 80px;
+      left: -100%;
+      background:#FCF6F3;
+      height: 104vh;
+      width: 100%;
+      text-align: center;
+      display: block;
+      transition: all 0.3s ease;
+
+      .logo {
+        display:none;
+      }
     }
   }
 }

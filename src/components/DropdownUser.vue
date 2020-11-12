@@ -100,7 +100,7 @@ a:hover{
 }
 @media (min-width: 320px) and (max-width: 359px){
   #nav .menu-item .sub-menu {
-    top: calc(80%);
+    top: calc(66%);
   }
 }
 @media (min-width: 360px) and (max-width: 374px){
