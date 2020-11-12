@@ -185,6 +185,9 @@ export default {
     width: 250px;
     transform: translate(0px,-10px);
   }
+  section > aside > div img:hover{
+    transform: rotateZ(25deg)  translate(-20px,-20px);
+  }
   section > aside > footer{
     flex-direction: row;
     display:flex;
