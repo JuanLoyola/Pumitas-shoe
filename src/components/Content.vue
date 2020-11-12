@@ -81,12 +81,12 @@ export default {
     background: #CA2728;
     display: grid;
     place-items: center ;
+    filter: drop-shadow(0 20px 20px  rgba(0,0,0,0.5));
   }
 
   section > aside > div img{
     width: 650px;
     transform: translate(-80px,-100px);
-    filter: drop-shadow(0 40px 20px  rgba(0,0,0,0.5));
     transition: .7s cubic-bezier(0.34, 1.56, 0.64, 1);
     filter: brightness(125%);
     cursor: pointer;
@@ -119,7 +119,8 @@ export default {
     font-weight: bold;
 
     &-add{
-      background-color:#CA2728;
+      background: #CA2728;
+
       border-radius: 9px;
       color: #fff;
       display:flex;
@@ -129,6 +130,7 @@ export default {
       margin: 0 20px;
       height: 120px;
       width: 90px;
+      filter: drop-shadow(0 10px 10px  rgba(0,0,0,0.5));
     }
     .table i{
       color:#FCF6F3;
@@ -170,36 +172,18 @@ export default {
   background-color: #FCF6F3;
   height: 100%;
   section{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0rem 0 0 5rem;
-    overflow:hidden;
+    flex-direction: column;
+    padding: 1.5rem 0 0 0rem;
   }
 
-  section > aside{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-    height: auto;
-  }
   section > aside > div{
-    border-radius: 50%;
     height: 250px;
     width: 250px;
-    background: #CA2728;
-    display: grid;
-    place-items: center ;
   }
 
   section > aside > div img{
     width: 250px;
-    transform: translate(0px,-20px);
-    filter: drop-shadow(0 40px 20px  rgba(0,0,0,0.5));
-    transition: .7s cubic-bezier(0.34, 1.56, 0.64, 1);
-    filter: brightness(125%);
-    cursor: pointer;
+    transform: translate(0px,-10px);
   }
   section > aside > footer{
     flex-direction: row;
@@ -209,28 +193,14 @@ export default {
   }
 
   section > aside > main > h1{
-    font-size: 1rem;
-    text-align: start;
-    display:flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-    flex-flow: nowrap column;
+    font-size: 1.2rem;
     letter-spacing: 2px;
-    background: salmon;
-  }
-  section > aside > main{
-    width: 100%;       // seguir aca mañana
+    margin: 20px 0;
   }
   section > aside > main > div{
-    width: 70%;
-    margin: 0px 0;
+    width: 100%;
     display:flex;
     justify-content: flex-end;
-  }
-
-  main > div {
-    display:flex;
-    background: cyan;
   }
   .table{
     display:flex;
@@ -248,9 +218,35 @@ export default {
     margin: 0 12px;
     cursor: pointer;
   }
-  .important{
-    color:#CA2728;
-  }
 }
+}
+@media (min-width: 1920px) {
+  .container{
+    section{
+      padding: 8rem 0 0 8rem;
+    }
+
+    section > aside{
+      width: 50%;
+    }
+
+    section > aside > div img{
+      width: 650px;
+    }
+    section > aside > footer img{
+      width: 90px;
+      margin: 20px 10px;
+    }
+
+    section > aside > main > h1{
+      font-size: 4.5rem;
+      text-align: start;
+    }
+
+    section > aside > main > div{
+      width: 100%;
+      margin: 30px 0;
+    }
+  }
 }
 </style>

@@ -4,12 +4,12 @@
       <i class="fas fa-shopping-cart"></i> {{currentValue || 0}}
     </div>
     <transition name="fade" appear>
-      <div class="sub-menu" v-if="isOpen">
+      <!-- <div class="sub-menu" v-if="isOpen">
         <div v-for="(item, i) in item" :key="i" class="menu-item">
           <a :href="item.link"> <span><i :class="item.trash" ></i></span> {{ item.name }}</a>
           <hr>
         </div>
-      </div>
+      </div> -->
     </transition>
   </div>
 </template>

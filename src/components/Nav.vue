@@ -141,8 +141,8 @@ export default {
     display: none;
   }
   @media (max-width: 1000px){
-    #nav{
-      padding: 0 40px 0 110px;
+    #nav .menu-btn i{
+      padding: 0 0 0 250px;
     }
   }
   @media (max-width: 920px) {
